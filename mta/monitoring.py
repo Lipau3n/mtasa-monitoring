@@ -52,7 +52,7 @@ class Server:
             sock.send(b"s")
             self.response = sock.recv(16384)
         except socket.error as e:
-            raise ServerException("Cant't connect to server. Original exception: %s" % e.strerror)
+            raise ServerException("Cant't connect to server. Original exception: %s" % str(e))
         finally:
             sock.close()
 
