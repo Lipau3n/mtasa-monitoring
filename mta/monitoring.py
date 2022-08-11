@@ -1,20 +1,20 @@
 import socket
-from typing import Tuple
+from typing import Optional, Tuple
 
 from mta.exceptions import ServerException
 
 
 class Server:
-    timeout = .2
-    game = None
-    port = None
-    name = None
-    gamemode = None
-    map = None
-    version = None
-    somewhat = None
-    players = None
-    maxplayers = None
+    timeout: float = .2
+    game: Optional[str] = None
+    port: Optional[int] = None
+    name: Optional[str] = None
+    gamemode: Optional[str] = None
+    map: Optional[str] = None
+    version: Optional[str] = None
+    somewhat: Optional[str] = None
+    players: Optional[str] = None
+    maxplayers: Optional[str] = None
 
     def __init__(self, address: str, port: int = 22003, **kwargs):
         self.validate_address(address)
